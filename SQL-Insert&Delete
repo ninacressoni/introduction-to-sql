@@ -1,0 +1,13 @@
+The INSERT statement inserts a row into a table
+
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Somesh', 'somesh@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Caitlin', 'cait@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Sally', 'sally@umich.edu') ;
+
+
+
+Deletes a row in a table based on selection criteria
+
+DELETE FROM Users WHERE email='ted@umich.edu'
