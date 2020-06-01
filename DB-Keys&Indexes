@@ -1,0 +1,88 @@
+AUTO_INCREMENT
+
+Often as we make multiple
+tables and need to JOIN them
+together we need an integer
+primary key for each row so we
+can efficiently add a reference
+to a row in some other table as
+a foreign key.
+
+DROP TABLE Users;
+CREATE TABLE Users (
+user_id INT UNSIGNED NOT NULL
+AUTO_INCREMENT,
+name VARCHAR(128),
+email VARCHAR(128),
+PRIMARY KEY(user_id),
+INDEX(email)
+)
+
+
+
+
+Indexes
+• As a table gets large (they always do), scanning all the data to find a
+single row becomes very costly
+• When drchuck@gmail.com logs into FaceBook, they must find my
+password amongst 500 million users
+• There are techniques to greatly shorten the scan as long as you create
+data structures and maintain those structures - like shortcuts
+• Hashes or Trees 
+
+
+
+MySQL Index Types
+• PRIMARY KEY - Very little space, exact match, requires no duplicates,
+extremely fast for integer fields
+• INDEX - Good for individual row lookup and sorting / grouping
+results - works best with exact matches or prefix lookups - can
+suggest HASH or BTREE
+
+
+
+
+B-Trees
+http://en.wikipedia.org/wiki/B-tree
+A B-tree is a tree data structure that keeps data sorted and allows searches,
+sequential access, insertions, and deletions in logarithmic amortized time. The
+B-tree is optimized for systems that read and write large blocks of data. It is
+commonly used in databases and file systems.
+
+
+
+Hashes
+http://en.wikipedia.org/wiki/Hash_function
+A hash function is any algorithm or subroutine that
+maps large data sets to smaller data sets, called
+keys. For example, a single integer can serve as an
+index to an array (cf. associative array). The values
+returned by a hash function are called hash values,
+hash codes, hash sums, checksums, or simply hashes.
+Hash functions are mostly used to accelerate table
+lookup or data comparison tasks such as finding
+items in a database...
+
+
+
+
+Specifying Indexes
+
+DROP TABLE Users;
+CREATE TABLE Users (
+user_id INT UNSIGNED NOT NULL
+AUTO_INCREMENT,
+name VARCHAR(128),
+email VARCHAR(128),
+PRIMARY KEY(user_id),
+INDEX(email)
+)
+
+ALTER TABLE Users ADD INDEX ( email ) USING BTREE
+
+Summary
+• SQL allows us to describe the shape of data to be stored and give
+many hints to the database engine as to how we will be accessing or
+using the data.
+• SQL is a language that provides us operations to Create, Read,
+Update, and Delete (CRUD) our data in a database.
