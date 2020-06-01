@@ -1,0 +1,58 @@
+Sorting with ORDER BY:
+
+You can add an ORDER BY clause to SELECT statements to
+get the results sorted in ascending or descending order
+SELECT * FROM Users ORDER BY email
+
+
+
+The LIKE Clause:
+
+We can do wildcard matching in a WHERE clause
+using the LIKE operator
+SELECT * FROM Users WHERE name LIKE '%e%'
+
+
+
+The LIMIT Clause:
+
+• The LIMIT clause can request the first "n" rows, or the first "n" rows
+after some starting row. Note: the first row is zero, not one.
+• WHERE and ORDER BY clauses happen *before* the LIMIT is applied.
+• The limit can be a count or a starting row and count (starts from 0).
+SELECT * FROM Users ORDER BY email DESC LIMIT 2;
+SELECT * FROM Users ORDER BY email LIMIT 1,2;
+
+
+
+Counting Rows with SELECT:
+
+You can request to receive the count of the rows
+that would be retrieved instead of the rows
+SELECT COUNT(*) FROM Users;
+SELECT COUNT(*) FROM Users WHERE email='csev@umich.edu'
+
+
+
+
+SQL Summary:
+
+SELECT * FROM Users WHERE email='csev@umich.edu'
+UPDATE Users SET name='Charles' WHERE email='csev@umich.edu'
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu')
+DELETE FROM Users WHERE email='ted@umich.edu'
+SELECT * FROM Users ORDER BY email
+SELECT * FROM Users WHERE name LIKE '%e%'
+SELECT COUNT(*) FROM Users WHERE email='csev@umich.edu'
+
+
+
+
+This is not too exciting (so far)
+• Tables pretty much look like big, fast programmable spreadsheets with
+rows, columns, and commands.
+• The power comes when we have more than one table and we can
+exploit the relationships between the tables.
+
+
+
