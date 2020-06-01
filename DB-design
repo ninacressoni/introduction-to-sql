@@ -1,0 +1,69 @@
+Database Design
+• Database design is an art form of its own with particular skills and
+experience.
+• Our goal is to avoid the really bad mistakes and design clean and
+easily understood databases.
+• Others may performance tune things later.
+• Database design starts with a picture...
+
+Building a Data Model
+• Drawing a picture of the data objects for our application and then
+figuring out how to represent the objects and their relationships
+• Basic Rule: Donʼt put the same string data in twice - use a relationship
+instead
+• When there is one thing in the “real world” there should only be one
+copy of that thing in the database
+
+For each “piece of info”
+...
+• Is the column an object or an
+attribute of another object?
+• Once we define objects, we need
+to define the relationships
+between objects.
+
+Normalization
+and Foreign Keys
+We want to keep track of which band is the “
+creator
+” of each music track...
+What album does this song “belong to”?
+Which album is this song related to?
+
+Database Normalization (3NF)
+There is *tons* of database theory - way too much to understand
+without excessive predicate calculus
+• Do not replicate data. Instead, reference data. Point at data.
+• Use integers for keys and for references.
+• Add a special “key” column to each table, which you will make
+references to.
+http://en.wikipedia.org/wiki/Database_normalization
+
+Integer Reference Pattern
+We use integer columns in one
+table to reference (or look up)
+rows in another table. 
+
+Key Terminology
+Three Kinds of Keys
+• Primary key - generally an integer autoincrement field
+• Logical key - what the outside world uses
+for lookup
+• Foreign key - generally an integer key
+pointing to a row in another table
+
+Primary Key Rules
+Best practices:
+• Never use your logical key as the primary key.
+• Logical keys can and do change, albeit slowly.
+• Relationships that are based on matching
+string fields are less efficient than integers.
+
+Foreign Keys
+• A foreign key is when a table has a
+column containing a key that points
+to the primary key of another table.
+• When all primary keys are integers,
+then all foreign keys are integers. This
+is good - very good.
+
