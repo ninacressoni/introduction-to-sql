@@ -1,0 +1,13 @@
+Allows the updating of a field with a WHERE clause:
+
+UPDATE Users SET name='Charles' WHERE email='csev@umich.edu'
+
+
+
+
+Retrieving Records: Select
+
+Retrieves a group of records - you can either retrieve all the
+records or a subset of the records with a WHERE clause
+SELECT * FROM Users
+SELECT * FROM Users WHERE email='csev@umich.edu'
