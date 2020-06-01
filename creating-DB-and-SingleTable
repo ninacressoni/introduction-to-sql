@@ -1,0 +1,12 @@
+Command Line:
+CREATE DATABASE People;
+USE People;
+
+Start Simple - A Single Table
+• Let’s make a table of Users in our People database
+• Two columns - name and email
+CREATE TABLE Users(
+name VARCHAR(128),
+email VARCHAR(128)
+);
+DESCRIBE Users;
