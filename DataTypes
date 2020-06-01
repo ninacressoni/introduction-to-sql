@@ -1,0 +1,60 @@
+Looking at Data Types
+• Text fields (small and large)
+• Binary fields (small and large)
+• Numeric fields
+• AUTO_INCREMENT fields
+
+String Fields
+• Understand character sets and are indexable for searching
+• CHAR allocates the entire space (faster for small strings where length
+is known)
+• VARCHAR allocates a variable amount of space depending on the
+data length (less space)
+
+Text Fields
+• Have a character set - paragraphs or HTML pages
+- TINYTEXT up to 255 characters
+- TEXT up to 65K
+- MEDIUMTEXT up to 16M
+- LONGTEXT up to 4G
+• Generally not used with indexing or sorting - and only then limited to
+a prefix
+
+
+Binary Types (rarely used)
+• Character = 8 - 32 bits of information depending on character set
+• Byte = 8 bits of information
+- BYTE(n) up to 255 bytes
+- VARBINARY(n) up to 65K bytes
+• Small Images - data
+• Not indexed or sorted
+
+Binary Large Object (BLOB)
+• Large raw data, files, images, word documents, PDFs, movies, etc.
+• No translation, indexing, or character set
+- TINYBLOB(n) - up to 255
+- BLOB(n) - up to 65K
+- MEDIUMBLOB(n) - up to 16M
+- LONGBLOB(n) - up to 4G
+
+Integer Numbers
+Integer numbers are very efficient, take little storage, and are easy to
+process because CPUs can often compare them with a single instruction.
+- TINYINT (-128, 128)
+- SMALLINT (-32768, +32768)
+- INT or INTEGER (2 Billion)
+- BIGINT - (10**18 ish)
+
+Floating Point Numbers
+Floating point numbers can represent a wide range of values, but accuracy
+is limited.
+- FLOAT (32-bit) 10**38 with seven digits of accuracy
+- DOUBLE (64-bit) 10**308 with 14 digits of accuracy
+
+Dates
+• TIMESTAMP - 'YYYY-MM-DD HH:MM:SS' (1970, 2037)
+• DATETIME - 'YYYY-MM-DD HH:MM:SS'
+• DATE - 'YYYY-MM-DD'
+• TIME - 'HH:MM:SS'
+• Built-in MySQL function NOW()
+
